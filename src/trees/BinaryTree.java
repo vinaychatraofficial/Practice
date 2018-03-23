@@ -30,6 +30,21 @@ public class BinaryTree {
 		tree.preOrder(tree.root);
 		System.out.println();
 		tree.postOrder(tree.root);
+		System.out.println();
+		//System.out.println(tree.height(tree.root));
+		tree.levelOrder(tree.root, tree.height(tree.root));
+	}
+	
+	private int height(Node node){
+		if(node==null)
+			return 0;
+		
+		int lh = height(node.left);
+		int rh = height(node.right);
+		if(lh>rh)
+			return lh+1;
+		else
+			return rh+1;
 	}
 	
 	private void inorder(Node node){
@@ -61,11 +76,22 @@ public class BinaryTree {
 		
 	}
 	
-	private void levelOrder(Node node){
+	private void levelOrder(Node node,int height){
 		if(node==null)
 			return;
 		
+		for(int i=1;i<=height;i++)
+			printLevel(node,i);
+	}
+
+	private void printLevel(Node node, int i) {
+		if(node==null || i==0)
+			return;
+		if(i==1)
+			System.out.print(node.data+" ");
 		
+		printLevel(node.left,i-1);
+		printLevel(node.right,i-1);
 	}
 
 }
