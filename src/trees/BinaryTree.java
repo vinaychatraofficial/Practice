@@ -2,6 +2,7 @@ package trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 class Node{
 	int data;
@@ -38,6 +39,27 @@ public class BinaryTree {
 		tree.levelOrder(tree.root, tree.height(tree.root));
 		System.out.println();
 		tree.levelOrderQueue(tree.root);
+		System.out.println("\nPre order iterative");
+		tree.preOrderIterative(tree.root);
+	}
+	
+	private void preOrderIterative(Node root) {
+		if(root==null)
+			return;
+		
+		Stack<Node> stack = new Stack<>();
+		
+		stack.push(root);
+		
+		while(!stack.isEmpty()) {
+			Node node = stack.pop();
+			System.out.print(node.data+" ");
+			if(node.right!=null)
+				stack.push(node.right);
+			if(node.left!=null)
+				stack.push(node.left);
+			
+		}
 	}
 	
 	private void levelOrderQueue(Node root) {
@@ -66,7 +88,7 @@ public class BinaryTree {
 			return rh+1;
 	}
 	
-	private void inorder(Node node){
+	public void inorder(Node node){
 		if(node==null)
 			return;
 		
