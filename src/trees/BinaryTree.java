@@ -43,6 +43,35 @@ public class BinaryTree {
 		tree.preOrderIterative(tree.root);
 		System.out.println("\nIn order iterative");
 		tree.inOrderIterative(tree.root);
+		System.out.println("\nPost order iterative");
+		tree.postOrderIterative(tree.root);
+	}
+	
+	private void postOrderIterative(Node root){
+		if(root==null)
+			return;
+		
+		Stack<Node> s1 = new Stack<>();
+		Stack<Node> s2 = new Stack<>();
+		
+		s1.push(root);
+		
+		while(!s1.isEmpty()){
+			root=s1.pop();
+			s2.push(root);
+			
+			if(root.left!=null)
+				s1.push(root.left);
+			if(root.right!=null)
+				s1.push(root.right);
+			
+		}
+		
+		while(!s2.isEmpty()){
+			Node node = s2.pop();
+			System.out.print(node.data+" ");
+		}
+		
 	}
 	
 	private void preOrderIterative(Node root) {
@@ -50,17 +79,18 @@ public class BinaryTree {
 			return;
 		
 		Stack<Node> stack = new Stack<>();
-		
 		while(true){
 			while(root!=null){
-				System.out.print(root.data+" ");
 				stack.push(root);
+				System.out.print(root.data+" ");
 				root=root.left;
 			}
 			if(stack.isEmpty())
 				break;
+			
 			root = stack.pop();
-			root=root.right;
+			root = root.right;
+			
 		}
 	}
 	
@@ -72,14 +102,14 @@ public class BinaryTree {
 		while(true){
 			while(root!=null){
 				stack.push(root);
-				root=root.left;
+				root = root.left;
 			}
+			
 			if(stack.isEmpty())
 				break;
-			
 			root = stack.pop();
 			System.out.print(root.data+" ");
-			root=root.right;
+			root = root.right;
 		}
 	}
 	
