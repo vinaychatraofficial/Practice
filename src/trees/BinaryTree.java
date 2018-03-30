@@ -41,6 +41,8 @@ public class BinaryTree {
 		tree.levelOrderQueue(tree.root);
 		System.out.println("\nPre order iterative");
 		tree.preOrderIterative(tree.root);
+		System.out.println("\nIn order iterative");
+		tree.inOrderIterative(tree.root);
 	}
 	
 	private void preOrderIterative(Node root) {
@@ -49,16 +51,35 @@ public class BinaryTree {
 		
 		Stack<Node> stack = new Stack<>();
 		
-		stack.push(root);
+		while(true){
+			while(root!=null){
+				System.out.print(root.data+" ");
+				stack.push(root);
+				root=root.left;
+			}
+			if(stack.isEmpty())
+				break;
+			root = stack.pop();
+			root=root.right;
+		}
+	}
+	
+	private void inOrderIterative(Node root){
+		if(root==null)
+			return;
 		
-		while(!stack.isEmpty()) {
-			Node node = stack.pop();
-			System.out.print(node.data+" ");
-			if(node.right!=null)
-				stack.push(node.right);
-			if(node.left!=null)
-				stack.push(node.left);
+		Stack<Node> stack = new Stack<>();
+		while(true){
+			while(root!=null){
+				stack.push(root);
+				root=root.left;
+			}
+			if(stack.isEmpty())
+				break;
 			
+			root = stack.pop();
+			System.out.print(root.data+" ");
+			root=root.right;
 		}
 	}
 	
