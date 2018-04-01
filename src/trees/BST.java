@@ -45,20 +45,32 @@ public class BST {
 			return root;
 		
 		Node curr=root;
+		Node prev = null;
+		String prevOp="";
 		
 		while(true) {
 			
 			if(data<curr.data) {
-				if(curr.left!=null) 
+				if(curr.left!=null) {
+					prev=curr;
+					prevOp="left";
 					curr = curr.left;
+				}
 				else
 					return root;
 			}else if(data==curr.data) {
+				if(prevOp.equalsIgnoreCase("left"))
+					prev.left=null;
+				else if(prevOp.equalsIgnoreCase("right"))
+					prev.right=null;
 				curr=null;
 				return root;
 			}else {
-				if(curr.right!=null)
+				if(curr.right!=null) {
+					prev=curr;
+					prevOp="right";
 					curr=curr.right;
+				}
 				else
 					return root;
 			}
