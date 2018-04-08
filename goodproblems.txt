@@ -1,0 +1,5 @@
+Trees 
+24 - make mirror
+25 - check mirrors of each other
+26 - construct tree given inorder, preorder
+29 - LCA of 2 nodes in a tree
