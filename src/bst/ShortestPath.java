@@ -11,7 +11,9 @@ public class ShortestPath {
 		BinarySearchTree bst = BinarySearchTree.initialize();
 		Node lca = findLCA(bst.root, bst.root.left.left, bst.root.right.right);
 		System.out.println(lca.data);
-		List<Integer> path = findPath(lca, bst.root.right.right.data);
+		//List<Integer> path = findPath(lca, bst.root.right.right.data);
+		List<Integer> path = new ArrayList<>();
+		findPath(lca, bst.root.left.left.data,path);
 		for(Integer data:path)
 			System.out.println(data);
 	}
@@ -20,7 +22,7 @@ public class ShortestPath {
 		List<Integer> path = new ArrayList<>();
 		if(root==null)
 			return null;
-		
+		path.add(root.data);
 		while(root!=null) {
 			if(data<root.data) {
 				root = root.left;
@@ -36,6 +38,22 @@ public class ShortestPath {
 		
 		return path;
 		
+	}
+	
+	private static void findPath(Node root, int data, List<Integer> list){
+		if(root==null)
+			return;
+		
+		list.add(root.data);
+		
+		if(data<root.data) {
+			findPath(root.left,data, list);
+		}else if(data>root.data) {
+			findPath(root.right,data, list);
+		}else {
+			return;
+		}
+			
 	}
 	
 	private static Node findLCA(Node root, Node node1, Node node2) {
