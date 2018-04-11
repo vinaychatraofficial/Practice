@@ -4,3 +4,6 @@ Trees
 26 - construct tree given inorder, preorder
 29 - LCA of 2 nodes in a tree
 30 - Zig zag tree
+
+BST
+Delete element
