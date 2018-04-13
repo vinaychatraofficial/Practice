@@ -7,3 +7,5 @@ Trees
 
 BST
 Delete element
+51 - Check BST
+53 - BST to DLL
