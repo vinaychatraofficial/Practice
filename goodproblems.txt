@@ -10,3 +10,4 @@ Delete element
 51 - Check BST
 53 - BST to DLL
 55 - DLL to BST
+60 - floor, ceil
