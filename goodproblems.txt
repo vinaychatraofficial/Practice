@@ -11,3 +11,4 @@ Delete element
 53 - BST to DLL
 55 - DLL to BST
 60 - floor, ceil
+70 - number of bsts 1..n
