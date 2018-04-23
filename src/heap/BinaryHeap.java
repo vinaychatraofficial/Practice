@@ -41,6 +41,19 @@ public class BinaryHeap {
 		percolateDown(0);
 	}
 	
+	private void heapifyArray(int[] arr, int n) {
+		if(n>this.size) {
+			this.data = new int[n];
+			this.size=n;
+		}
+		for(int i=0;i<n;i++)
+			this.data[i]=arr[i];
+		this.count=n;
+		
+		for(int i=(n-1)/2;i>=0;i--)
+			percolateDown(i);
+	}
+	
 	private void percolateDown(int i) {
 		if(i>=count-1)
 			return;
@@ -51,7 +64,7 @@ public class BinaryHeap {
 			max=l;
 		else
 			max=i;
-		if(r<=count-1 && this.data[r]>max)
+		if(r<=count-1 && this.data[r]>this.data[max])
 			max=r;
 		
 		int temp = this.data[i];
@@ -60,6 +73,40 @@ public class BinaryHeap {
 			this.data[max]=temp;
 			percolateDown(max);
 		}
+	}
+	
+	private void printArray() {
+		for(int i=0;i<this.count;i++)
+			System.out.print(this.data[i]+" ");
+	}
+	
+	private void heapSort(int arr[], int n) {
+		if(this.size<n) {
+			this.data = new int[n];
+			this.size=n;
+		}
+		for(int i=0;i<n;i++)
+			this.data[i]=arr[i];
+		this.count=n;
+		
+		//heapify array
+		for(int i=(n-1)/2;i>=0;i--) {
+			percolateDown(i);
+		}
+		
+		System.out.println("Array after heapifying");
+		this.printArray();
+		
+		//delete one by one and move it to end
+		int tempCount = this.count;
+		for(int i=0;i<tempCount;i++) {
+			int temp = this.data[0];
+			this.data[0]=this.data[this.count-1];
+			this.data[this.count-1]=temp;
+			this.count--;
+			percolateDown(0);
+		}
+		this.count=n;
 	}
 
 	public static void main(String args[]) {
@@ -73,16 +120,25 @@ public class BinaryHeap {
 		heap.count=11;
 		
 		heap.insertElement(19);
-		for(int i=0;i<heap.count;i++)
-			System.out.print(heap.data[i]+" ");
+		heap.printArray();
 		
 		System.out.println();
 		
 		heap.deleteMax();
-		for(int i=0;i<heap.count;i++)
-			System.out.print(heap.data[i]+" ");
+		heap.printArray();
 		
+		System.out.println();
+		BinaryHeap newHeap = new BinaryHeap(0);
+		int arr[] = {1,2,3,5};
+		newHeap.heapifyArray(arr, 4);
+		newHeap.printArray();
 		
+		System.out.println("Heap sort");
+		int[] arr1 = {3,2,1,6,7};
+		BinaryHeap sortHeap = new BinaryHeap(0);
+		sortHeap.heapSort(arr1, 5);
+		System.out.println();
+		sortHeap.printArray();
 	}
 	
 

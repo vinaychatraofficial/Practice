@@ -8,6 +8,7 @@ public class MinHeap {
 	
 	public MinHeap(int size){
 		this.size = size;
+		this.data = new int[size];
 	}
 	
 	private void heapifyArray(int[] arr, int n){
@@ -52,6 +53,22 @@ public class MinHeap {
 		int arr[] = {6,2,1,7,3,4,5};
 		MinHeap heap = new MinHeap(0);
 		heap.heapifyArray(arr, 7);
+		//heap.printArray();
+		return heap;
+	}
+	
+	public static MinHeap initialize1(){
+		int arr[] = {9,2,1,7,8};
+		MinHeap heap = new MinHeap(9);
+		heap.heapifyArray(arr, 5);
+		//heap.printArray();
+		return heap;
+	}
+	
+	public static MinHeap initialize2(){
+		int arr[] = {5,3,4,6};
+		MinHeap heap = new MinHeap(0);
+		heap.heapifyArray(arr, 4);
 		//heap.printArray();
 		return heap;
 	}
