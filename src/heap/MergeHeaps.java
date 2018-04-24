@@ -18,8 +18,8 @@ public class MergeHeaps {
 			heap1.data[heap1.count++]=heap2.data[i];
 		}
 		int i=heap1.count-1;
-		for(int j=(i-1)/2;i>=0;i--)
-			heap1.percolateDown(i);
+		for(int j=(i-1)/2;j>=0;j--)
+			heap1.percolateDown(j);
 	}
 
 }

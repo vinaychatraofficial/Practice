@@ -11,7 +11,7 @@ public class BinaryHeap {
 		this.data = new int[size];
 	}
 	
-	private void insertElement(int d) {
+	public void insertElement(int d) {
 		if(this.count==this.size) {
 			int[] temp = new int[size];
 			for(int i=0;i<count;i++)
@@ -34,11 +34,12 @@ public class BinaryHeap {
 		
 	}
 	
-	private void deleteMax() {
+	public int deleteMax() {
 		int top = this.data[0];
 		this.data[0] = this.data[count-1];
 		this.count--;
 		percolateDown(0);
+		return top;
 	}
 	
 	private void heapifyArray(int[] arr, int n) {
@@ -75,7 +76,7 @@ public class BinaryHeap {
 		}
 	}
 	
-	private void printArray() {
+	public void printArray() {
 		for(int i=0;i<this.count;i++)
 			System.out.print(this.data[i]+" ");
 	}
@@ -139,6 +140,13 @@ public class BinaryHeap {
 		sortHeap.heapSort(arr1, 5);
 		System.out.println();
 		sortHeap.printArray();
+	}
+	
+	public static BinaryHeap initialize() {
+		int arr[] = {6,2,1,7,3,4,5};
+		BinaryHeap heap = new BinaryHeap(0);
+		heap.heapifyArray(arr, 7);
+		return heap;
 	}
 	
 

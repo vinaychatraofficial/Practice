@@ -11,6 +11,26 @@ public class MinHeap {
 		this.data = new int[size];
 	}
 	
+	public void insertElem(int data) {
+		if(this.count==this.size) {
+			int[] olddata = new int[this.count];
+			for(int i=0;i<this.count;i++)
+				olddata[i]=this.data[i];
+			this.data=new int[this.size*2];
+			this.size=this.size*2;
+			for(int i=0;i<this.count;i++)
+				this.data[i]=olddata[i];
+		}
+		this.count++;
+		int temp = this.count-1;
+		while(temp>1 && this.data[temp]<this.data[(temp-1)/2]) {
+			this.data[temp]=this.data[(temp-1)/2];
+			temp=(temp-1)/2;
+		}
+		this.data[temp]=data;
+		System.out.println("inserting "+data);
+	}
+	
 	private void heapifyArray(int[] arr, int n){
 		if(this.size<n){
 			data = new int[n];
@@ -42,6 +62,14 @@ public class MinHeap {
 			this.data[i]=temp;
 			percolateDown(min);
 		}
+	}
+	
+	public int deleteMin() {
+		int data = this.data[0];
+		this.data[0]=this.data[this.count-1];
+		this.count--;
+		percolateDown(0);
+		return data;
 	}
 	
 	public void printArray(){

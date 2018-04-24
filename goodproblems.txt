@@ -12,3 +12,6 @@ Delete element
 55 - DLL to BST
 60 - floor, ceil
 70 - number of bsts 1..n
+
+Heaps
+16 - kth smallest element in min heap using auxilary heap
