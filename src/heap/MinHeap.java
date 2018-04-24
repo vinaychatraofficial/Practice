@@ -50,14 +50,6 @@ public class MinHeap {
 			this.data[temp]=data;
 	}
 	
-	public int deleteMin(){
-		int data = this.data[0];
-		this.data[0]=this.data[this.count-1];
-		this.count--;
-		percolateDown(0);
-		return data;
-	}
-	
 	private void heapifyArray(int[] arr, int n){
 		if(this.size<n){
 			data = new int[n];
