@@ -15,5 +15,8 @@ Delete element
 
 Heaps
 16 - kth smallest element in min heap using auxilary heap
+19,20 - implement stack and queue using heap
+21 - find max 10 numbers from a file of billion numbers
+22,23,24 - merge k sorted lists with total of n elements
 27 - median using heaps
 30 - maximum sliding window

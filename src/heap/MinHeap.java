@@ -30,6 +30,25 @@ public class MinHeap {
 		this.data[temp]=data;
 	}
 	
+	public void insertElement(int data){
+		if(this.count==this.size){
+			int olddata[] = new int[this.size];
+			for(int i=0;i<this.count;i++)
+				olddata[i]=this.data[i];
+			this.data=new int[this.size*2];
+			for(int i=0;i<this.count;i++)
+				this.data[i]=olddata[i];
+			this.size=this.size*2;
+		}
+			this.count++;
+			int temp = this.count-1;
+			while(temp>1 && data<this.data[(temp-1)/2]){
+				this.data[temp]=this.data[(temp-1)/2];
+				temp=(temp-1)/2;
+			}
+			this.data[temp]=data;
+	}
+	
 	private void heapifyArray(int[] arr, int n){
 		if(this.size<n){
 			data = new int[n];
