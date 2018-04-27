@@ -23,12 +23,11 @@ public class MinHeap {
 		}
 		this.count++;
 		int temp = this.count-1;
-		while(temp>1 && this.data[temp]<this.data[(temp-1)/2]) {
+		while(temp>1 && data<this.data[(temp-1)/2]) {
 			this.data[temp]=this.data[(temp-1)/2];
 			temp=(temp-1)/2;
 		}
 		this.data[temp]=data;
-		System.out.println("inserting "+data);
 	}
 	
 	private void heapifyArray(int[] arr, int n){

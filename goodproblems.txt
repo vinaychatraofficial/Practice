@@ -15,3 +15,5 @@ Delete element
 
 Heaps
 16 - kth smallest element in min heap using auxilary heap
+27 - median using heaps
+30 - maximum sliding window
