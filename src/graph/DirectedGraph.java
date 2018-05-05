@@ -1,10 +1,13 @@
 package graph;
 
-
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class DirectedGraph {
 	Vertex[] vertices;
 	int[][] adjacencyMaxtrix;
+	List<List<Integer>> adjacencyList;
 	int maxVertices;
 	int vertexCount;
 	
@@ -18,6 +21,9 @@ public class DirectedGraph {
 			}
 		}
 		vertexCount=0;
+		adjacencyList = new ArrayList<List<Integer>>();
+		for(int i=0;i<maxVertices;i++)
+			adjacencyList.add(new ArrayList<Integer>());
 	}
 	
 	public void addVertex(String label) {
@@ -26,6 +32,8 @@ public class DirectedGraph {
 	
 	public void addEdge(int source, int destination) {
 		adjacencyMaxtrix[source][destination]=1;
+		List<Integer> sourceList = adjacencyList.get(source);
+		sourceList.add(destination);
 	}
 	
 	public void displayVertex(int i) {
@@ -45,6 +53,7 @@ public class DirectedGraph {
 		g.addEdge(0, 3);
 		g.addEdge(1, 3);
 		g.addEdge(2, 4);
+		g.addEdge(0, 4);
 		g.addEdge(3, 5);
 		g.addEdge(3, 6);
 		g.addEdge(4, 6);
