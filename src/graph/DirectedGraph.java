@@ -36,6 +36,12 @@ public class DirectedGraph {
 		sourceList.add(destination);
 	}
 	
+	public void addEdge(int source, int destination, int weight) {
+		adjacencyMaxtrix[source][destination]=weight;
+		List<Integer> sourceList = adjacencyList.get(source);
+		sourceList.add(destination);
+	}
+	
 	public void displayVertex(int i) {
 		System.out.println(vertices[i].label);
 	}
@@ -59,6 +65,22 @@ public class DirectedGraph {
 		g.addEdge(4, 6);
 		g.addEdge(3, 7);
 		g.addEdge(2, 7);
+		return g;
+	}
+	
+	public static DirectedGraph initializeWeightedGraph() {
+		DirectedGraph g = new DirectedGraph(10);
+		g.addVertex("A");
+		g.addVertex("B");
+		g.addVertex("C");
+		g.addVertex("D");
+		g.addVertex("E");
+		g.addEdge(0, 1, 4);
+		g.addEdge(0, 2, 1);
+		g.addEdge(1, 4, 4);
+		g.addEdge(2, 1, 2);
+		g.addEdge(2, 3, 4);
+		g.addEdge(3, 4, 4);
 		return g;
 	}
 
