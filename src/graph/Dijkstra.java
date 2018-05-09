@@ -61,16 +61,17 @@ public class Dijkstra {
 		
 		while(!pq.isEmpty()) {
 			WeightedVertex minVertex = pq.remove();
-			if(!settledNodes.contains(minVertex.index)) {
+			settledNodes.add(minVertex.index);
 				List<Integer> sourceList = g.adjacencyList.get(minVertex.index);
 				for(Integer adj:sourceList) {
+					if(!settledNodes.contains(adj)) {
 					if(distance[adj]>(distance[minVertex.index])+g.adjacencyMaxtrix[minVertex.index][adj]) {
 						distance[adj]=distance[minVertex.index]+g.adjacencyMaxtrix[minVertex.index][adj];
+						pq.add(new WeightedVertex(adj, distance[adj]));
 					}
-					pq.add(new WeightedVertex(adj, distance[adj]));
+					}
 				}
-				settledNodes.add(minVertex.index);
-			}
+				
 		}
 	}
 
