@@ -83,6 +83,23 @@ public class DirectedGraph {
 		g.addEdge(3, 4, 4);
 		return g;
 	}
+	
+	public static DirectedGraph initializeWeightedCyclicGraph() {
+		DirectedGraph g = new DirectedGraph(10);
+		g.addVertex("A");
+		g.addVertex("B");
+		g.addVertex("C");
+		g.addVertex("D");
+		g.addVertex("E");
+		g.addEdge(0, 1, 4);
+		g.addEdge(0, 2, 1);
+		g.addEdge(1, 4, 4);
+		g.addEdge(2, 1, 2);
+		g.addEdge(2, 3, 4);
+		g.addEdge(3, 4, 4);
+		g.addEdge(4, 2, -10);
+		return g;
+	}
 
 }
 

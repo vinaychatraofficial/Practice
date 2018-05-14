@@ -67,8 +67,9 @@ public class Dijkstra {
 					if(!settledNodes.contains(adj)) {
 					if(distance[adj]>(distance[minVertex.index])+g.adjacencyMaxtrix[minVertex.index][adj]) {
 						distance[adj]=distance[minVertex.index]+g.adjacencyMaxtrix[minVertex.index][adj];
-						pq.add(new WeightedVertex(adj, distance[adj]));
+						
 					}
+					pq.add(new WeightedVertex(adj, distance[adj]));
 					}
 				}
 				
