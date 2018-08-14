@@ -1,0 +1,3 @@
+KMP
+Rabin Karp
+Boyer Moore - good suffix, bad character

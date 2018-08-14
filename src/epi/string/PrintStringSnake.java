@@ -2,7 +2,7 @@ package epi.string;
 
 /**
  * @author vcprabha
- * 6.11
+ * 6.11 Write a string Sinusoidally
  */
 public class PrintStringSnake {
 
