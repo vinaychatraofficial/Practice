@@ -2,6 +2,5 @@ KMP
 Rabin Karp
 Boyer Moore - good suffix, bad character
 
-journal dev for java
-sql - hacker rank
-dp - top coder, geeksforgeeks 20 to 30 different problems
+dijkstra, BFS, DFS
+prims, kruskals
