@@ -5,3 +5,4 @@ Boyer Moore - good suffix, bad character
 dijkstra, BFS, DFS
 prims, kruskals
 bellman ford
+topological sort
