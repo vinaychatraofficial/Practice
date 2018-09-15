@@ -2,7 +2,7 @@ package epi.binarytree;
 
 /**
  * @author vcpaks
- * Compute the LCA when nodes have parent pointers
+ * 10.4 Compute the LCA when nodes have parent pointers
  */
 public class LCAWithParent {
 
