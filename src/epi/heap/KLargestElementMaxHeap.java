@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 
 /**
  * @author vcpaks
- * Compute k largest elements in a max heap array
+ * 10.6 Compute k largest elements in a max heap array
  */
 public class KLargestElementMaxHeap {
 
