@@ -2,7 +2,7 @@ package epi.binarytree;
 
 /**
  * @author vcpaks
- * 10.1 Test if a binary tree is height balanced
+ * 9.1 Test if a binary tree is height balanced
  */
 public class HeightBalance {
 

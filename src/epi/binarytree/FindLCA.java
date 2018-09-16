@@ -2,7 +2,7 @@ package epi.binarytree;
 
 /**
  * @author vcpaks
- * 10.3 Compute the LCA in a binary tree
+ * 9.3 Compute the LCA in a binary tree
  */
 public class FindLCA {
 

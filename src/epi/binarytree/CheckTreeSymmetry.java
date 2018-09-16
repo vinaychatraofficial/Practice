@@ -2,7 +2,7 @@ package epi.binarytree;
 
 /**
  * @author vcpaks
- * 10.2 Test if a binary tree is symmetric
+ * 9.2 Test if a binary tree is symmetric
  */
 public class CheckTreeSymmetry {
 
