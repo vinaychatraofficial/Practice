@@ -1,5 +1,8 @@
 package epi.binarytree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author vcprabha
  * Implement an inorder traversal with O(1) space
@@ -41,6 +44,7 @@ public class InorderOrder1space {
 		nine.parent=four;
 		
 		inorder(zero);
+		System.out.println(inorder1(zero));
 	
 	}
 	
@@ -76,6 +80,30 @@ public class InorderOrder1space {
 			}
 			
 		}
+	}
+	
+	private static List<Integer> inorder1(BinaryTreeNodeParent root){
+		BinaryTreeNodeParent prev = null, next = null, cur=root;
+		List<Integer> result = new ArrayList<>();
+		while(cur!=null) {
+			//top
+			if(cur.parent==prev) {
+				if(cur.left!=null)
+					next=cur.left;
+				else {
+					result.add(cur.data);
+					next = cur.right!=null?cur.right:cur.parent;
+				}
+			}else if(cur.left==prev) {// from left
+				result.add(cur.data);
+				next = cur.right!=null?cur.right:cur.parent;
+			}else {//from right
+				next=cur.parent;
+			}
+			prev=cur;
+			cur=next;
+		}
+		return result;
 	}
 
 }
