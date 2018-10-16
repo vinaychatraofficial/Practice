@@ -1,5 +1,8 @@
 package epi.bst;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import epi.binarytree.BinaryTreeNode;
 
 public class BST {
@@ -38,6 +41,29 @@ public class BST {
 		thirtyseven.right=fortyone;
 		twentynine.right=thirtyone;
 		return nineteen;
+	}
+	
+	public static void printTreeLevelOrder(BinaryTreeNode root){
+		if(root==null)
+			return;
+		
+		Queue<BinaryTreeNode> q = new LinkedList<>();
+		q.add(root);
+		q.add(null);
+		while(!q.isEmpty()){
+			BinaryTreeNode node = q.remove();
+			if(node!=null){
+				System.out.print(node.data+" ");
+				if(node.left!=null)
+					q.add(node.left);
+				if(node.right!=null)
+					q.add(node.right);
+			}else{
+				System.out.println();
+				if(!q.isEmpty())
+					q.add(null);
+			}
+		}
 	}
 
 }
