@@ -2,6 +2,10 @@ package epi.bst;
 
 import epi.binarytree.BinaryTreeNode;
 
+/**
+ * @author vcpaks
+ * 14.2 Find the first key greater than a value in a BST
+ */
 public class FirstKeyGreaterThanValue {
 
 	public static void main(String[] args) {

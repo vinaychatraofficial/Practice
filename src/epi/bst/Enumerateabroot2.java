@@ -1,11 +1,11 @@
-package epi.binarytree;
+package epi.bst;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author vcpaks
- * Enumerate numbers of the form a+b*(square root of 2)
+ * 14.7 Enumerate numbers of the form a+b*(square root of 2)
  */
 public class Enumerateabroot2 {
 
