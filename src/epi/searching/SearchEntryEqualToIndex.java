@@ -2,7 +2,7 @@ package epi.searching;
 
 /**
  * @author vcprabha
- * 12.2 Search a sorted array for an entry equal to index
+ * (12.2) Search a sorted array for an entry equal to index
  */
 public class SearchEntryEqualToIndex {
 

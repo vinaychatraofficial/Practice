@@ -2,7 +2,7 @@ package epi.searching;
 
 /**
  * @author vcprabha
- * 12.1 Search a sorted array for the first occurence of k
+ * (12.1) Search a sorted array for the first occurence of k
  */
 public class FirstOccurenceK {
 
