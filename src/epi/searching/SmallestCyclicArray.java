@@ -2,7 +2,7 @@ package epi.searching;
 
 /**
  * @author vcpaks
- * (12.3) Search a cyclically sorted array
+ * 11.3 Search a cyclically sorted array
  */
 public class SmallestCyclicArray {
 
