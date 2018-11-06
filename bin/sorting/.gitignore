@@ -3,3 +3,5 @@
 /MergeSort.class
 /SelectionSort.class
 /QuickSort.class
+/RadixSort.class
+/HeapSort.class
