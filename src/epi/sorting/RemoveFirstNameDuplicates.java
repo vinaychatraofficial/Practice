@@ -45,14 +45,14 @@ public class RemoveFirstNameDuplicates {
 		Collections.sort(input);
 		int index=0;
 		Name prev = null;
-		for(int i=0;i<input.size();i++) {
+		int n = input.size();
+		for(int i=0;i<n;i++) {
 			if(prev==null || (prev!=null && !input.get(i).firstName.equals(prev.firstName))) {
 				input.set(index, input.get(i));
 				index++;
 			}
 			prev = input.get(i);
 		}
-		int n = input.size();
 		
 		input.subList(index, n).clear();
 		
