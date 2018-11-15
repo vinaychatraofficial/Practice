@@ -5,3 +5,9 @@ avl tree - rotations
 journal dev for java
 sql - hacker rank
 dp - top coder, geeksforgeeks 20 to 30 different problems
+
+Memory management
+https://www.baeldung.com/java-memory-management-interview-questions
+
+Threads
+http://tutorials.jenkov.com/java-concurrency/index.html
