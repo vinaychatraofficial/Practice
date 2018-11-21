@@ -16,3 +16,6 @@ Thread pool executor
 ForkJoin
 Lock
 ReadWriteLock
+Concurrent Hashmap
+
+soap vs rest
