@@ -8,3 +8,7 @@ dijkstra, BFS, DFS
 prims, kruskals
 bellman ford
 topological sort
+cycle in directed graph(dfs) and undirected graph(disjoint set part of Kruskal)
+
+x & ~(x-1) extracts the lowest set bit of x (all others are clear).
+x | ~(x + 1) = extracts the lowest cleared bit of x (all others are set).
