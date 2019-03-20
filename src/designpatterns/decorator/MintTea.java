@@ -2,13 +2,15 @@ package designpatterns.decorator;
 
 public class MintTea extends AddOnDecorator {
 	
-	public MintTea(Beverage b) {
-		this.b=b;
+	
+
+	public MintTea(Drink b) {
+		super(b);
 	}
 
 	@Override
 	public int cost() {
-		return this.b.cost()+3;
+		return this.b.cost()+1;
 	}
 
 }

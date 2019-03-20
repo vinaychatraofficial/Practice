@@ -1,8 +1,8 @@
 package designpatterns.decorator;
 
-public class Tea extends AddOnDecorator {
+public class Coffee extends AddOnDecorator {
 
-	public Tea(Drink b) {
+	public Coffee(Drink b) {
 		super(b);
 	}
 

@@ -1,5 +1,5 @@
 package designpatterns.decorator;
 
-public interface Beverage {
+public interface Drink {
 	public int cost();
 }
