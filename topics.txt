@@ -19,3 +19,7 @@ ReadWriteLock
 Concurrent Hashmap
 
 soap vs rest
+
+https://github.com/donnemartin/system-design-primer
+
+https://www.algoexpert.io/rachit
