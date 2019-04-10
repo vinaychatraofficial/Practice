@@ -3,7 +3,7 @@ package ae;
 import java.util.Map;
 import java.util.HashMap;
 
-class Program {
+class LargestRange {
   public static int[] largestRange(int[] array) {
 		int n = array.length;
 		int[] res = new int[2];
