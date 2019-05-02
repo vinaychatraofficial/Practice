@@ -67,6 +67,7 @@ public class Kruskals3 {
 		int dRank = dest.rank;
 		if(sRank>=dRank) {
 			sRank = (sRank==dRank) ? sRank+1:sRank;
+			sRoot.rank = sRank;
 			dRoot.parent = sRoot;
 		}else {
 			sRoot.parent = dRoot;
