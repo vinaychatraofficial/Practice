@@ -2,6 +2,7 @@ package ae;
 
 public class MaxProfitWithKTransactions {
 
+	//O(nk) time | O(n) space
 	public static int maxProfitWithKTransactions(int[] prices, int k) {
 		if(prices.length==0 || k==0)
 			return 0;
@@ -28,6 +29,7 @@ public class MaxProfitWithKTransactions {
 		return profit[prices.length-1];
 	}
 
+	//O(nk) time | O(nk) space
 	public static int maxProfitWithKTransactions1(int[] prices, int k) {
 		if(prices.length==0 || k==0)
 			return 0;
@@ -55,6 +57,7 @@ public class MaxProfitWithKTransactions {
 		return profit[k][prices.length-1];
 	}
 
+	//O(n^2*k) time | O(nk) space
 	public static int maxProfitWithKTransactions2(int[] prices, int k) {
 		if(prices.length==0 || k==0)
 			return 0;
