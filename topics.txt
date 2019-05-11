@@ -23,6 +23,5 @@ soap vs rest
 
 System design
 https://github.com/donnemartin/system-design-primer
-https://www.youtube.com/watch?time_continue=25&v=-W9F__D3oY4
 
 https://www.algoexpert.io/rachit
